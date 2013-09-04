@@ -12,5 +12,6 @@
 
 - (void) play;
 - (void) stop;
+- (void) playWithGain:(CGFloat)gain;
 
 @end

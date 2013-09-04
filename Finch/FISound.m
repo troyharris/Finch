@@ -48,6 +48,13 @@
     [(FISoundSource*) [_voices objectAtIndex:_currentVoiceIndex] play];
 }
 
+- (void) playWithGain:(CGFloat)gain {
+    _currentVoiceIndex = (_currentVoiceIndex + 1) % [_voices count];
+    FISoundSource *source = (FISoundSource*)[_voices objectAtIndex:_currentVoiceIndex];
+    source.gain = gain;
+    [source play];
+}
+
 - (void) stop
 {
     for (FISound *voice in _voices) {
